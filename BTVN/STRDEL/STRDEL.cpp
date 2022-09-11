@@ -11,22 +11,21 @@ int main()
     while(n--)
     {
         cin>>s;
-
+        unsigned int t=s.size();
         for(unsigned int i=1;i<s.size();i++)
         {
             if(s[i]==s[i-1] && s[i]=='B')
                 {
-                    s.erase(s.begin()+i-1);
-                    s.erase(s.begin()+i);
+                    t=t-2;
+                    i=i+1;
                 }
             else if(s[i]=='B' && s[i-1]=='A')
                 {
-                    s.erase(s.begin()+i-1);
-                    s.erase(s.begin()+i);
+                    t=t-2;
+                    i=i+1;
                 }
         }
         cout<<t<<'\n';
-        t=0;
     }
     return 0;
 }
