@@ -18,15 +18,18 @@ string tong(string x,string k)
     if(nho>0) kq='1'+kq;
     return kq;
 }
-
+string s;
 int main()
 {
-    string s;
-    string kq;
+
+    string kq="";
     cin>>s;
-    while(s.size()--)
+    string temp;
+    unsigned long long i = s.size();
+    while(i--)
     {
-        kq=tong(kq,s[s.size()]);
+        temp=s[i];
+        kq=tong(kq,temp);
     }
     cout<<kq;
     return 0;
