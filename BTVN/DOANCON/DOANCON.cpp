@@ -6,8 +6,8 @@ int dem=1;
 int maxx=0;
 int main()
 {
-    freopen("DOANCON.INP","r",stdin);
-    freopen("DOANCON.OUT","w",stdout);
+    //freopen("DOANCON.INP","r",stdin);
+    //freopen("DOANCON.OUT","w",stdout);
     cin>>n;
     int temp;
     while(n--)
@@ -15,7 +15,7 @@ int main()
         cin>>k;
         if(k>temp)
         dem++;
-        else 
+        else
         {
             if(maxx<dem)
             maxx=dem;
