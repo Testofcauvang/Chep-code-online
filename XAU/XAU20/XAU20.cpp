@@ -1,30 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-char* kq(char* a, char chr, char* b)
+int main()
 {
-  int c;
-  int d = 0;
-  for ( c= 0; a[c] != '\0'; c++)
+    string a;
+    cin>>a;
+    char ch; cin>>ch;
+    for(int i=0;i<a.size();i++)
     {
-    if ( a[c] != chr )
-        {
-      b[d] = a[c];
-      d++;
+        if(a[i]==ch)
+            a.erase(i);
     }
-  }
-  b[d] = '\0';
-  return b;
-}
-
-int main(){
-  char s[1012];
-  char b[1012];
-  char chr = 'a';
-  cin>>s;
-  cin>>chr;
-
-  cout<<kq(s,chr,b)<<endl;
-
-  return 0;
+    cout<<a;
 }
