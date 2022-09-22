@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int A[100001];
-int kq[100001];
+int A[1000001];
+int kq[1000001];
 int n;
 int main()
 {
     //freopen("Sumseq.INP","r",stdin);
     //freopen("Sumseq.OUT","w",stdout);
-    //ios_base::sync_with_stdio(false);
-    //cin.tie(0);
-    //cout.tie(0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
     cin>>n;
     for(int i=1;i<=n;i++)
     {
@@ -23,7 +23,7 @@ int main()
             kq[i]=kq[i-1]+A[i];
         else kq[i]=A[i];
     }
-    int maxx=0;
+    int maxx=-1e9;
     int temp2;
     int temp3=1;
     for(int i=2;i<=n;i++)
@@ -35,14 +35,14 @@ int main()
             }
     }
     int temp4=maxx;
-    for(int i=temp2-1;i>0;i--)
+    for(int i=temp2;i>0;i--)
     {
-        if(maxx>0)
+        maxx=maxx-A[i];
+        if(maxx==0)
         {
-            maxx=maxx-kq[i];
-            temp3++;
+            temp3=i;
+            break;
         }
-        else break;
     }
     cout<<temp3<<'\n';
     cout<<temp2<<'\n';
